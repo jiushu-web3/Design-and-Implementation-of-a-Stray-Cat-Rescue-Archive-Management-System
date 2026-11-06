@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>流浪猫救助档案管理系统 · UML 图册</title>
+<style>
+  :root{
+    --cream:#FBF7F1; --surface:#FFFDFA; --line:#EFE4D8; --ink:#3B332F;
+    --muted:#7A6E64; --coral:#E8836A; --coral-deep:#C2664A; --peach:#FBE9E3;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;
+    font-size:15px; line-height:1.75;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:36px 28px 64px}
+  header.top{
+    background:linear-gradient(135deg,#FFF9F3 0%,#FDF1EA 100%);
+    border:1px solid var(--line); border-radius:16px; padding:26px 30px; margin-bottom:22px;
+  }
+  header.top h1{margin:0 0 6px; font-size:24px; letter-spacing:.5px}
+  header.top p{margin:0; color:var(--muted); font-size:13.5px}
+  .facts{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+  .fact{
+    background:#fff; border:1px solid var(--line); border-radius:999px;
+    padding:4px 14px; font-size:12.5px; color:var(--muted);
+  }
+  .fact b{color:var(--coral-deep); font-weight:600}
+
+  .toc{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 22px; margin-bottom:26px;
+  }
+  .toc h2{margin:0 0 10px; font-size:14px; color:var(--muted); font-weight:600; letter-spacing:1px}
+  .toc ol{margin:0; padding-left:20px; columns:2; column-gap:34px}
+  .toc li{margin:3px 0; font-size:13.5px}
+  .toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid transparent}
+  .toc a:hover{color:var(--coral-deep); border-bottom-color:var(--peach)}
+
+  figure.card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 24px 18px; margin:0 0 26px; break-inside:avoid;
+  }
+  figure.card .cap{
+    display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+    border-bottom:1px dashed var(--line); padding-bottom:12px; margin-bottom:16px;
+  }
+  figure.card .cap .no{
+    background:var(--peach); color:var(--coral-deep); font-weight:700; font-size:12.5px;
+    padding:3px 10px; border-radius:6px; letter-spacing:.5px; white-space:nowrap;
+  }
+  figure.card .cap .name{font-size:16px; font-weight:600}
+  figure.card .cap .tag{margin-left:auto; font-size:12px; color:var(--muted)}
+  .canvas{
+    background:#fff; border:1px solid #F3EAE0; border-radius:8px; padding:10px;
+    overflow:auto;
+  }
+  .canvas img{display:block; width:100%; height:auto}
+  figcaption.notes{margin-top:14px; font-size:13px; color:var(--muted); line-height:1.85}
+  figcaption.notes b{color:var(--ink); font-weight:600}
+  figcaption.notes ul{margin:6px 0 0; padding-left:20px}
+  figcaption.notes li{margin:2px 0}
+
+  .tips{
+    background:#FFF9F3; border:1px solid var(--peach); border-left:3px solid var(--coral);
+    border-radius:8px; padding:16px 20px; font-size:13.5px; color:#5F544B;
+  }
+  .tips h3{margin:0 0 8px; font-size:14px; color:var(--coral-deep)}
+  .tips ol{margin:0; padding-left:20px}
+  .tips li{margin:4px 0}
+
+  @media print{
+    body{background:#fff}
+    .wrap{max-width:none; padding:0}
+    .toc{display:none}
+    header.top{border:none; background:#fff; padding:0 0 14px}
+    figure.card{border:none; padding:0; margin:0; page-break-after:always}
+    figure.card:last-of-type{page-break-after:auto}
+    .canvas{border:none; padding:0}
+    .tips{display:none}
+  }
+  @media (max-width:760px){
+    .toc ol{columns:1}
+    .wrap{padding:20px 14px 40px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>流浪猫救助档案管理系统 · UML 图册</h1>
+    <p>共 8 张图，全部依据 <code>StrayCat.sln</code> 现有代码与 <code>Database/*.sql</code> 的实际实现绘制，不含设想中的功能。</p>
+    <div class="facts">
+      <span class="fact">aspx 页面 <b>27</b></span>
+      <span class="fact">数据表 <b>6</b></span>
+      <span class="fact">主从表 <b>4 对</b></span>
+      <span class="fact">存储过程 <b>38</b></span>
+      <span class="fact">用户角色 <b>2</b></span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <h2>图目录</h2>
+    <ol>
+      <li><a href="#f1">图 4-1　系统功能结构图</a></li>
+      <li><a href="#f2">图 4-2　系统用例图</a></li>
+      <li><a href="#f3">图 4-3　系统实体类图</a></li>
+      <li><a href="#f4">图 4-4　系统分层类图</a></li>
+      <li><a href="#f5">图 4-5　救助与领养主流程活动图</a></li>
+      <li><a href="#f6">图 4-6　档案状态流转图</a></li>
+      <li><a href="#f7">图 5-1　救助建档顺序图</a></li>
+      <li><a href="#f8">图 5-2　领养登记顺序图</a></li>
+    </ol>
+  </nav>
+
+  <figure class="card" id="f1">
+    <div class="cap">
+      <span class="no">图 4-1</span><span class="name">系统功能结构图</span>
+      <span class="tag">对应：概要设计 · 功能结构</span>
+    </div>
+    <div class="canvas"><img src="01-功能结构图.svg" alt="系统功能结构图"></div>
+    <figcaption class="notes">
+      <b>层级依据：</b>顶层为系统，第二层是与 <code>Site.Master</code> 导航菜单一致的 6 个模块，
+      第三层是可落到具体页面的功能点。
+      <ul>
+        <li>「档案管理」「医疗管理」各 4 项，对应 CatArchive / MedicalRecord 两张表的增删改查。</li>
+        <li>「领养管理」只有 3 项：登记前必须先做资格校验（状态必须为「待领养」），所以校验单列为一项。</li>
+        <li>「统计报表」与「用户管理」仅管理员可见，由 <code>AdminPageBase</code> 拦截。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="card" id="f2">
+    <div class="cap">
+      <span class="no">图 4-2</span><span class="name">系统用例图</span>
+      <span class="tag">对应：概要设计 · 用例建模</span>
+    </div>
+    <div class="canvas"><img src="02-用例图.svg" alt="系统用例图"></div>
+    <figcaption class="notes">
+      <b>建模要点：</b>两个参与者之间是<b>泛化关系</b>——管理员继承工作人员的全部用例，
+      因此图中只有管理员到「查看统计报表」「管理系统用户」两条专属连线，没有重复画 11 条。
+      <ul>
+        <li>«include» 出现在「登记领养」「办理退养」到「变更档案状态」之间：这两个操作在存储过程内部就会改写档案状态，属于必须发生的包含关系。</li>
+        <li>「查询救助档案」对应 CatList 的模糊查询 + 五项复合条件 + 分页。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="card" id="f3">
+    <div class="cap">
+      <span class="no">图 4-3</span><span class="name">系统实体类图</span>
+      <span class="tag">对应：概要设计 · 数据建模</span>
+    </div>
+    <div class="canvas"><img src="03-实体类图.svg" alt="系统实体类图"></div>
+    <figcaption class="notes">
+      <b>与数据库的对应：</b>6 个实体类与 <code>02_CreateTables.sql</code> 的 6 张表一一对应，
+      属性即字段，类型做了 C# 映射（<code>TINYINT→byte</code>、<code>DATETIME→DateTime</code>、可空列加 <code>?</code>）。
+      <ul>
+        <li><b>组合关系</b>（实心菱形）：子记录离开主档案没有独立意义，删除时由存储过程一并清理。</li>
+        <li><code>RescueRecord</code> 与 <code>CatArchive</code> 是 <b>1 对 1</b>，靠 <code>UQ_RescueRecord_CatId</code> 唯一约束保证。</li>
+        <li><code>FollowUpRecord</code> 挂在 <code>AdoptionRecord</code> 下，不是直接挂在猫下——这是「回访针对一次领养」的设计选择。</li>
+        <li>两个枚举类把魔法数字收敛到一处：<code>CatStatuses</code>（1~5）、<code>AdoptionStatuses</code>（1~2）。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="card" id="f4">
+    <div class="cap">
+      <span class="no">图 4-4</span><span class="name">系统分层类图</span>
+      <span class="tag">对应：概要设计 · 三层架构</span>
+    </div>
+    <div class="canvas"><img src="04-分层类图.svg" alt="系统分层类图"></div>
+    <figcaption class="notes">
+      <b>依赖方向：</b>页面 → BLL → DAL → DbHelper → 存储过程，单向依赖，没有反向引用。
+      <ul>
+        <li>每个 Bll 只暴露 <code>OperationResult&lt;T&gt;</code> 返回值，页面拿不到异常，也拿不到 DAL。</li>
+        <li><code>DbHelper</code> 是全站唯一拼接 <code>SqlParameter</code> 的地方，杜绝字符串拼接 SQL。</li>
+        <li>规则类 <code>CatRules</code> 单独抽出：状态是否允许编辑、是否允许登记领养，全在这一个文件里判定，便于单元测试。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="card" id="f5">
+    <div class="cap">
+      <span class="no">图 4-5</span><span class="name">救助与领养主流程活动图</span>
+      <span class="tag">对应：概要设计 · 业务流程</span>
+    </div>
+    <div class="canvas"><img src="07-活动图-救助与领养主流程.svg" alt="救助与领养主流程活动图"></div>
+    <figcaption class="notes">
+      <b>三条泳道：</b>工作人员负责录入与决策，系统负责校验与状态流转，数据库负责事务写入。
+      <ul>
+        <li>两个失败出口：表单校验不通过退回填写；事务写入失败回滚并提示，不产生半条数据。</li>
+        <li>「健康评估通过」不通过时回到「录入医疗记录」，体现「在站照料」可以停留任意多轮。</li>
+        <li>退养分叉会把档案状态回退为「待领养」，与状态图的 <code>3 → 2</code> 边严格一致。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="card" id="f6">
+    <div class="cap">
+      <span class="no">图 4-6</span><span class="name">档案状态流转图</span>
+      <span class="tag">对应：概要设计 · 状态建模</span>
+    </div>
+    <div class="canvas"><img src="08-状态图-档案状态流转.svg" alt="档案状态流转图"></div>
+    <figcaption class="notes">
+      <b>规则出处：</b><code>StrayCat.BLL/CatRules.ChangeStatus()</code>，图中每条迁移都能在代码里找到对应分支。
+      <ul>
+        <li>「已领养 → 已结案」的守卫条件是<b>有效回访次数 &gt; 0</b>，代码里返回 <code>Messages.FollowUpRequired</code>。</li>
+        <li>「→ 已终止」必须填写终止原因，数据库还有 <code>CK_CatArchive_Terminate</code> 检查约束兜底。</li>
+        <li>「已领养 → 待领养」不在 <code>ChangeStatus</code> 里，而由 <code>usp_Adoption_Return</code> 在事务中完成。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="card" id="f7">
+    <div class="cap">
+      <span class="no">图 5-1</span><span class="name">救助建档顺序图</span>
+      <span class="tag">对应：详细设计 · 建档</span>
+    </div>
+    <div class="canvas"><img src="05-顺序图-救助建档.svg" alt="救助建档顺序图"></div>
+    <figcaption class="notes">
+      <b>一次完整调用链：</b>页面 → <code>CatBll.Create</code> → <code>FieldRules</code> 校验 → <code>CatDal</code> →
+      <code>DbHelper.ExecuteReturnId</code> → <code>usp_Cat_CreateWithRescue</code>。
+      <ul>
+        <li>alt 片段是<b>校验失败</b>分支：此时图片已经落盘，所以先调 <code>PageHelper.DeletePhoto</code> 删掉，避免产生孤儿文件。</li>
+        <li>编号 <code>CAT+年份+4位流水</code> 在事务内用 <code>UPDLOCK, HOLDLOCK</code> 取最大值，并发下不会重号。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="card" id="f8">
+    <div class="cap">
+      <span class="no">图 5-2</span><span class="name">领养登记顺序图</span>
+      <span class="tag">对应：详细设计 · 领养</span>
+    </div>
+    <div class="canvas"><img src="06-顺序图-领养登记.svg" alt="领养登记顺序图"></div>
+    <figcaption class="notes">
+      <b>组合片段：</b>alt 是状态不是「待领养」时的拒绝分支，else 是正常登记分支。
+      <ul>
+        <li>状态判定做了两层：BLL 用 <code>CatRules.CanAddAdoption</code> 先挡一次，存储过程再用 <code>UPDLOCK</code> 复查一次。</li>
+        <li>「一只猫同时只能有一条有效领养」由唯一索引 <code>UX_Adoption_OneActive</code>（<code>WHERE Status = 1</code>）保证。</li>
+        <li>登记成功后档案状态被同一事务改写为 3，页面无需再调一次状态接口。</li>
+      </ul>
+    </figcaption>
+  </figure>
+
+  <div class="tips">
+    <h3>插入论文的三点建议</h3>
+    <ol>
+      <li><b>用 PNG</b>：<code>docs/uml/png/</code> 下是 2 倍分辨率图，Word 里按版心宽度（约 16 cm）插入即可，放大不失真。若用 WPS/Word 2016 以上，也可以直接插 SVG。</li>
+      <li><b>活动图建议横排</b>：图 4-5 是竖长图（宽高比约 1:1.07），按 16 cm 宽插入后高度约 17 cm，会顶到页面底部。可在 Word 里单独建一节设为<b>横向</b>，或缩到 13 cm 宽。</li>
+      <li><b>图题格式</b>：图题放在图下方、居中、五号宋体，形如「图 4-1　系统功能结构图」；正文里要先出现「如图 4-1 所示」再放图。具体字号仍以学院范文为准。</li>
+    </ol>
+  </div>
+
+</div>
+</body>
+</html>
