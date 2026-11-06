@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <RootNamespace>StrayCat.BLL</RootNamespace>
+    <AssemblyName>StrayCat.BLL</AssemblyName>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StrayCat.Model\StrayCat.Model.csproj" />
+    <ProjectReference Include="..\StrayCat.DAL\StrayCat.DAL.csproj" />
+  </ItemGroup>
+</Project>

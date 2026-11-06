@@ -1,0 +1,40 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="StrayCat.Web.SiteMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>流浪猫救助档案管理系统</title>
+    <link rel="stylesheet" href="Content/css/site.css" />
+</head>
+<body>
+    <form id="MainForm" runat="server" enctype="multipart/form-data">
+        <div class="shell">
+            <aside class="side">
+                <div class="brand">
+                    <p class="brand-mark">档案</p>
+                    <h1>流浪猫救助档案管理系统</h1>
+                </div>
+                <nav class="menu">
+                    <a href="Default.aspx">首页</a>
+                    <a href="CatList.aspx">猫咪档案</a>
+                    <asp:PlaceHolder ID="AdminMenu" runat="server" Visible="false">
+                        <a href="UserList.aspx">用户管理</a>
+                        <a href="Stat.aspx">数据统计</a>
+                    </asp:PlaceHolder>
+                    <a href="ChangePassword.aspx">修改密码</a>
+                </nav>
+            </aside>
+            <div class="workspace">
+                <header class="top">
+                    <p>当前用户：<asp:Literal ID="UserLiteral" runat="server" /></p>
+                    <asp:LinkButton ID="LogoutButton" runat="server" CssClass="link-button" CausesValidation="false" OnClick="LogoutButton_Click" Text="退出" />
+                </header>
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="Content/js/site.js"></script>
+</body>
+</html>

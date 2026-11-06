@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayCat.Model", "StrayCat.Model\StrayCat.Model.csproj", "{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayCat.DAL", "StrayCat.DAL\StrayCat.DAL.csproj", "{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayCat.BLL", "StrayCat.BLL\StrayCat.BLL.csproj", "{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayCat.Web", "StrayCat.Web\StrayCat.Web.csproj", "{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayCat.Tests", "StrayCat.Tests\StrayCat.Tests.csproj", "{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A1B7E2-4F58-4A1D-9C6E-1A2B3C4D5E05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
