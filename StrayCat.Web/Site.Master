@@ -23,6 +23,7 @@
                     <asp:PlaceHolder ID="AdminMenu" runat="server" Visible="false">
                         <p class="menu-label">审核</p>
                         <a href="ReportList.aspx">上报审核</a>
+                        <a href="ApplicationList.aspx">领养申请审核</a>
                         <p class="menu-label">档案管理</p>
                         <a href="CatList.aspx">档案查询</a>
                         <a href="CatAdd.aspx">建立档案</a>
