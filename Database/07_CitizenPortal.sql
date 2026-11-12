@@ -245,7 +245,10 @@ AS
 BEGIN
     SET NOCOUNT ON;
     IF NOT EXISTS (SELECT 1 FROM dbo.CatArchive WHERE CatId = @CatId AND Status = 2)
+    BEGIN
         RAISERROR(N'该猫当前不可申请领养', 16, 1);
+        RETURN;
+    END
 
     INSERT INTO dbo.AdoptionApplication
         (CatId, UserId, ApplicantName, Phone, Address, Reason, Status)
@@ -412,8 +415,8 @@ BEGIN
     SET NOCOUNT ON;
     SELECT c.CatId, c.CatNo, c.TempName, c.Gender, c.EstimatedAge, c.Color,
            c.IsNeutered, c.PhotoPath, c.Remark, c.Status,
-           c.TerminateReason, c.CreateUserId, c.CreateTime,
-           r.Location, r.RescueTime, r.InitialHealth,
+           c.TerminateReason, c.CreateUserId, c.CreateTime, c.UpdateTime,
+           r.Location, r.FoundWay, r.RescueTime, r.InitialHealth,
            ISNULL(r.RescueId, 0) AS RescueId,
            ISNULL(r.ReceiverUserId, 0) AS ReceiverUserId,
            CAST(NULL AS NVARCHAR(500)) AS RescueRemark,
