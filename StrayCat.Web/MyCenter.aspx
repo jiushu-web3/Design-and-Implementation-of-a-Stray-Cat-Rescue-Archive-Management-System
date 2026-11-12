@@ -44,7 +44,7 @@
             <div class="list-row">
                 <span class="col-name"><%#: Eval("CatNo") %> · <%#: Eval("TempName") %></span>
                 <span class="col-time"><%# TimeText(Eval("CreateTime")) %></span>
-                <span class="col-status"><span class='tag <%# StatusTag(Eval("Status")) %>'><%#: ApplicationStatusName(Eval("Status")) %></span></span>
+                <span class="col-status"><span class='tag <%# ApplicationStatusTag(Eval("Status")) %>'><%#: ApplicationStatusName(Eval("Status")) %></span></span>
                 <span><%#: ReasonText(Eval("RejectReason")) %></span>
             </div>
         </ItemTemplate>
