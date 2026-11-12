@@ -27,6 +27,7 @@ namespace StrayCat.Web
             if (!IsPostBack)
             {
                 PageHelper.BindGenders(GenderList, false);
+                GenderList.Items.Insert(0, new ListItem("请选择", ""));
                 PageHelper.BindNeutered(NeuteredList);
             }
             LoadReport();

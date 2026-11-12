@@ -11,7 +11,7 @@
         <div class="gate-card">
             <p class="brand-mark">档案</p>
             <h1>流浪猫救助档案管理系统</h1>
-            <p class="gate-note">救助站内部使用</p>
+            <p class="gate-note">救助站工作人员与领养人入口</p>
             <asp:Label ID="MessageLabel" runat="server" CssClass="form-message" data-form-message="true" />
             <div class="gate-choice">
                 <span><asp:RadioButton ID="UserChoice" runat="server" GroupName="LoginRole" Text="普通用户" /></span>
@@ -33,7 +33,7 @@
             <asp:RequiredFieldValidator ID="Val3" runat="server" ControlToValidate="CaptchaBox" ErrorMessage="请填写验证码" Display="Dynamic" CssClass="field-error" />
             <asp:CustomValidator ID="Val4" runat="server" ControlToValidate="CaptchaBox" ErrorMessage="验证码错误" OnServerValidate="CaptchaCheck" Display="Dynamic" CssClass="field-error" EnableClientScript="false" />
             <asp:Button ID="LoginButton" runat="server" Text="登录" CssClass="primary" OnClick="LoginButton_Click" />
-            <p class="gate-links"><a href="Register.aspx">没有账号？注册</a></p>
+            <p class="gate-links"><a href="Register.aspx">没有账号？注册</a> · <a href="Adoptable.aspx">浏览待领养猫咪</a></p>
         </div>
     </form>
     <script src="Content/js/site.js"></script>
