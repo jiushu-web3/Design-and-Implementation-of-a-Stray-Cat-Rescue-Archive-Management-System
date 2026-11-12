@@ -51,6 +51,16 @@ namespace StrayCat.BLL
             return _cats.GetDetail(catId);
         }
 
+        public PagedResult<PublicCat> ListAdoptable(int pageIndex, int pageSize)
+        {
+            return _cats.ListAdoptable(pageIndex, pageSize);
+        }
+
+        public CatDetail GetPublicDetail(int catId)
+        {
+            return _cats.GetPublicDetail(catId);
+        }
+
         public RescueRecord GetRescue(int catId)
         {
             return _cats.GetRescue(catId);

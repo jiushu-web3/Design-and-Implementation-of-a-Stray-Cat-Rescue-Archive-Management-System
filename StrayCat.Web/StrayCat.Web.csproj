@@ -52,6 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminPageBase.cs" />
+    <Compile Include="Adoptable.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Adoptable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdoptableDetail.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AdoptableDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdoptionAdd.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>AdoptionAdd.aspx</DependentUpon>
@@ -183,6 +191,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Adoptable.aspx" />
+    <Content Include="AdoptableDetail.aspx" />
     <Content Include="AdoptionAdd.aspx" />
     <Content Include="AdoptionDetail.aspx" />
     <Content Include="AdoptionEdit.aspx" />
