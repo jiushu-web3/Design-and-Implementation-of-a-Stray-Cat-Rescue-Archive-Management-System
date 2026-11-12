@@ -64,5 +64,23 @@ namespace StrayCat.DAL
             }
             return reader.GetDateTime(ordinal);
         }
+
+        public static bool Has(SqlDataReader reader, string name)
+        {
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                if (string.Equals(reader.GetName(i), name, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static int? NullableInt(SqlDataReader reader, string name)
+        {
+            int index = reader.GetOrdinal(name);
+            return reader.IsDBNull(index) ? (int?)null : reader.GetInt32(index);
+        }
     }
 }

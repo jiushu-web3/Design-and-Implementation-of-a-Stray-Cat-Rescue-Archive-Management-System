@@ -48,6 +48,24 @@ namespace StrayCat.DAL
             return rows[0];
         }
 
+        public PagedResult<PublicCat> ListAdoptable(int pageIndex, int pageSize)
+        {
+            return _db.QueryPage(
+                "usp_Cat_ListAdoptable",
+                RecordMaps.PublicCat,
+                SqlParams.P("@PageIndex", pageIndex),
+                SqlParams.P("@PageSize", pageSize));
+        }
+
+        public CatDetail GetPublicDetail(int catId)
+        {
+            List<CatDetail> rows = _db.Query(
+                "usp_Cat_GetPublicDetail",
+                RecordMaps.Detail,
+                SqlParams.P("@CatId", catId));
+            return rows.Count == 0 ? null : rows[0];
+        }
+
         public RescueRecord GetRescue(int catId)
         {
             List<RescueRecord> rows = _db.Query("usp_Rescue_GetByCatId", RecordMaps.Rescue, SqlParams.P("@CatId", catId));

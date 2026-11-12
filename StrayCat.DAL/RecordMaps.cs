@@ -146,5 +146,69 @@ namespace StrayCat.DAL
         {
             return reader.GetInt32(reader.GetOrdinal("YearNum"));
         }
+
+        public static StrayReport Report(SqlDataReader reader)
+        {
+            return new StrayReport
+            {
+                ReportId = reader.GetInt32(reader.GetOrdinal("ReportId")),
+                UserId = reader.GetInt32(reader.GetOrdinal("UserId")),
+                UserName = DataMaps.Has(reader, "UserName") ? DataMaps.Text(reader, "UserName") : null,
+                RealName = DataMaps.Has(reader, "RealName") ? DataMaps.Text(reader, "RealName") : null,
+                FoundPlace = DataMaps.Text(reader, "FoundPlace"),
+                FoundDate = reader.GetDateTime(reader.GetOrdinal("FoundDate")),
+                Description = DataMaps.Text(reader, "Description"),
+                PhotoPath = DataMaps.Text(reader, "PhotoPath"),
+                ContactPhone = DataMaps.Text(reader, "ContactPhone"),
+                Status = reader.GetByte(reader.GetOrdinal("Status")),
+                RejectReason = DataMaps.Text(reader, "RejectReason"),
+                CatId = DataMaps.NullableInt(reader, "CatId"),
+                CreateTime = reader.GetDateTime(reader.GetOrdinal("CreateTime")),
+                AuditUserId = DataMaps.NullableInt(reader, "AuditUserId"),
+                AuditTime = DataMaps.Time(reader, "AuditTime")
+            };
+        }
+
+        public static PublicCat PublicCat(SqlDataReader reader)
+        {
+            return new PublicCat
+            {
+                CatId = reader.GetInt32(reader.GetOrdinal("CatId")),
+                CatNo = DataMaps.Text(reader, "CatNo"),
+                TempName = DataMaps.Text(reader, "TempName"),
+                Gender = reader.GetByte(reader.GetOrdinal("Gender")),
+                Status = reader.GetByte(reader.GetOrdinal("Status")),
+                EstimatedAge = DataMaps.Text(reader, "EstimatedAge"),
+                Color = DataMaps.Text(reader, "Color"),
+                IsNeutered = reader.GetByte(reader.GetOrdinal("IsNeutered")),
+                PhotoPath = DataMaps.Text(reader, "PhotoPath"),
+                Remark = DataMaps.Text(reader, "Remark"),
+                RescueTime = DataMaps.Time(reader, "RescueTime"),
+                MedicalCount = reader.GetInt32(reader.GetOrdinal("MedicalCount")),
+                AdoptionCount = reader.GetInt32(reader.GetOrdinal("AdoptionCount"))
+            };
+        }
+
+        public static AdoptionApplication Application(SqlDataReader reader)
+        {
+            return new AdoptionApplication
+            {
+                ApplicationId = reader.GetInt32(reader.GetOrdinal("ApplicationId")),
+                CatId = reader.GetInt32(reader.GetOrdinal("CatId")),
+                UserId = reader.GetInt32(reader.GetOrdinal("UserId")),
+                ApplicantName = DataMaps.Text(reader, "ApplicantName"),
+                Phone = DataMaps.Text(reader, "Phone"),
+                Address = DataMaps.Text(reader, "Address"),
+                Reason = DataMaps.Text(reader, "Reason"),
+                Status = reader.GetByte(reader.GetOrdinal("Status")),
+                RejectReason = DataMaps.Text(reader, "RejectReason"),
+                AdoptionId = DataMaps.NullableInt(reader, "AdoptionId"),
+                CreateTime = reader.GetDateTime(reader.GetOrdinal("CreateTime")),
+                AuditUserId = DataMaps.NullableInt(reader, "AuditUserId"),
+                AuditTime = DataMaps.Time(reader, "AuditTime"),
+                CatNo = DataMaps.Text(reader, "CatNo"),
+                TempName = DataMaps.Text(reader, "TempName")
+            };
+        }
     }
 }
