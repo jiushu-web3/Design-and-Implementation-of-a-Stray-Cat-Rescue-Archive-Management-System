@@ -45,7 +45,7 @@ namespace StrayCat.Web
                 CurrentUser.UserId,
                 RealNameBox.Text,
                 PhoneBox.Text,
-                role ?? RoleCodes.Staff,
+                role ?? RoleCodes.User,
                 EnabledBox.Checked,
                 PasswordBox.Text);
             if (!result.Success)

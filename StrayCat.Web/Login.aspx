@@ -14,8 +14,8 @@
             <p class="gate-note">救助站内部使用</p>
             <asp:Label ID="MessageLabel" runat="server" CssClass="form-message" data-form-message="true" />
             <div class="gate-choice">
-                <span><asp:RadioButton ID="UserChoice" runat="server" GroupName="LoginRole" Text="用户登录" /></span>
-                <span><asp:RadioButton ID="AdminChoice" runat="server" GroupName="LoginRole" Text="管理员登录" /></span>
+                <span><asp:RadioButton ID="UserChoice" runat="server" GroupName="LoginRole" Text="普通用户" /></span>
+                <span><asp:RadioButton ID="AdminChoice" runat="server" GroupName="LoginRole" Text="管理员" /></span>
             </div>
             <label for="UserNameBox">用户名</label>
             <asp:TextBox ID="UserNameBox" runat="server" MaxLength="20" data-required="true" />

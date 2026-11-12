@@ -5,7 +5,7 @@ using StrayCat.Model;
 
 namespace StrayCat.Web
 {
-    public partial class MedicalAddPage : PageBase
+    public partial class MedicalAddPage : AdminPageBase
     {
         protected Label MessageLabel;
         protected PlaceHolder FormHolder;

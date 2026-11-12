@@ -27,7 +27,7 @@ namespace StrayCat.Model
 
         public static string RoleName(byte role)
         {
-            return role == RoleCodes.Admin ? "管理员" : "工作人员";
+            return role == RoleCodes.Admin ? "管理员" : "普通用户";
         }
 
         public static string AdoptionName(byte status)

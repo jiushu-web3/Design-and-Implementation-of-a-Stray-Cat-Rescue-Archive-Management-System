@@ -87,7 +87,7 @@ namespace StrayCat.BLL
             {
                 return OperationResult<int>.Fail(Messages.PasswordMismatch);
             }
-            return Create(userName, password, realName, phone, RoleCodes.Staff, true);
+            return Create(userName, password, realName, phone, RoleCodes.User, true);
         }
 
         public int CountEnabled()
@@ -232,7 +232,7 @@ namespace StrayCat.BLL
 
         private static string ValidRole(byte role)
         {
-            if (role == RoleCodes.Admin || role == RoleCodes.Staff)
+            if (role == RoleCodes.Admin || role == RoleCodes.User)
             {
                 return null;
             }

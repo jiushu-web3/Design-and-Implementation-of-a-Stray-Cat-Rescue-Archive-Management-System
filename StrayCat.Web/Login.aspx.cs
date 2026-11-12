@@ -65,7 +65,7 @@ namespace StrayCat.Web
                 MessageLabel.Text = result.Message;
                 return;
             }
-            byte expected = AdminChoice.Checked ? RoleCodes.Admin : RoleCodes.Staff;
+            byte expected = AdminChoice.Checked ? RoleCodes.Admin : RoleCodes.User;
             if (result.Data.Role != expected)
             {
                 MessageLabel.Text = expected == RoleCodes.Admin ? Messages.UseUserLogin : Messages.UseAdminLogin;

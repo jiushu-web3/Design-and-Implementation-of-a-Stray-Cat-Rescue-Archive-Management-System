@@ -5,7 +5,7 @@ using StrayCat.Model;
 
 namespace StrayCat.Web
 {
-    public partial class AdoptionAddPage : PageBase
+    public partial class AdoptionAddPage : AdminPageBase
     {
         protected Label MessageLabel;
         protected PlaceHolder FormHolder;

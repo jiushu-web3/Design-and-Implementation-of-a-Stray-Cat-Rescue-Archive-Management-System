@@ -114,7 +114,7 @@ namespace StrayCat.Web
         {
             list.Items.Clear();
             list.Items.Add(new ListItem("管理员", RoleCodes.Admin.ToString()));
-            list.Items.Add(new ListItem("工作人员", RoleCodes.Staff.ToString()));
+            list.Items.Add(new ListItem("普通用户", RoleCodes.User.ToString()));
         }
 
         public static void BindWays(DropDownList list, string[] options)

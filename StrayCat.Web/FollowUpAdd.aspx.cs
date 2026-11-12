@@ -5,7 +5,7 @@ using StrayCat.Model;
 
 namespace StrayCat.Web
 {
-    public partial class FollowUpAddPage : PageBase
+    public partial class FollowUpAddPage : AdminPageBase
     {
         protected Label MessageLabel;
         protected PlaceHolder FormHolder;

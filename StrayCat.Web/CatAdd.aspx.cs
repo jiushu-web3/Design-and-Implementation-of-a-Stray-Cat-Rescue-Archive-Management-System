@@ -5,7 +5,7 @@ using StrayCat.Model;
 
 namespace StrayCat.Web
 {
-    public partial class CatAddPage : PageBase
+    public partial class CatAddPage : AdminPageBase
     {
         protected Label MessageLabel;
         protected TextBox TempNameBox;

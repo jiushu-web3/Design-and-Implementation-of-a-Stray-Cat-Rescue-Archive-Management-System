@@ -6,7 +6,7 @@ using StrayCat.Model;
 
 namespace StrayCat.Web
 {
-    public partial class FollowUpListPage : PageBase
+    public partial class FollowUpListPage : AdminPageBase
     {
         protected Literal TitleLiteral;
         protected Label MessageLabel;

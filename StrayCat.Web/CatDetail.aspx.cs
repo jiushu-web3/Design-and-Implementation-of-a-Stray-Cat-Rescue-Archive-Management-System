@@ -7,7 +7,7 @@ using StrayCat.Model;
 
 namespace StrayCat.Web
 {
-    public partial class CatDetailPage : PageBase
+    public partial class CatDetailPage : AdminPageBase
     {
         protected Label MessageLabel;
         protected PlaceHolder DetailHolder;

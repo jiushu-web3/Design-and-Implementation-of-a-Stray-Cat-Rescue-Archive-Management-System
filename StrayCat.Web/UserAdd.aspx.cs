@@ -21,7 +21,7 @@ namespace StrayCat.Web
             if (!IsPostBack)
             {
                 PageHelper.BindRoles(RoleList);
-                PageHelper.Select(RoleList, RoleCodes.Staff.ToString());
+                PageHelper.Select(RoleList, RoleCodes.User.ToString());
             }
         }
 
@@ -37,7 +37,7 @@ namespace StrayCat.Web
                 PasswordBox.Text,
                 RealNameBox.Text,
                 PhoneBox.Text,
-                role ?? RoleCodes.Staff,
+                role ?? RoleCodes.User,
                 EnabledBox.Checked);
             if (!result.Success)
             {

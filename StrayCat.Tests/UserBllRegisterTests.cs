@@ -43,13 +43,13 @@ namespace StrayCat.Tests
 
                 SysUser user = new UserDal(ConnectionString).GetByUserName(name);
                 Assert.NotNull(user);
-                Assert.Equal(RoleCodes.Staff, user.Role);
+                Assert.Equal(RoleCodes.User, user.Role);
                 Assert.True(user.IsEnabled);
                 Assert.Equal("注册测试", user.RealName);
 
                 OperationResult<CurrentUser> login = new UserBll(ConnectionString).Login(name, "Staff@1");
                 Assert.True(login.Success);
-                Assert.Equal(RoleCodes.Staff, login.Data.Role);
+                Assert.Equal(RoleCodes.User, login.Data.Role);
             }
             finally
             {

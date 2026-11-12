@@ -25,6 +25,10 @@
                     <a href="AdoptionList.aspx">领养记录</a>
                     <p class="menu-label">回访管理</p>
                     <a href="FollowUpList.aspx">回访历史</a>
+                    <p class="menu-label">领养与上报</p>
+                    <a href="Adoptable.aspx">可领养猫</a>
+                    <a href="ReportAdd.aspx">上报流浪猫</a>
+                    <a href="MyCenter.aspx">我的中心</a>
                     <asp:PlaceHolder ID="AdminMenu" runat="server" Visible="false">
                         <p class="menu-label">统计报表</p>
                         <a href="Stat.aspx">月度统计</a>

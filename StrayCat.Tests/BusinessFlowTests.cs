@@ -115,14 +115,14 @@ namespace StrayCat.Tests
                 Assert.True(catBll.Delete(fourth.Data).Success);
                 cats.Remove(fourth.Data);
 
-                OperationResult<int> staff = users.Create(staffName, "Staff@1", "测试员", null, RoleCodes.Staff, true);
+                OperationResult<int> staff = users.Create(staffName, "Staff@1", "测试员", null, RoleCodes.User, true);
                 Assert.True(staff.Success, staff.Message);
-                Assert.Equal(Messages.UserNameExists, users.Create(staffName, "Staff@1", "测试员", null, RoleCodes.Staff, true).Message);
+                Assert.Equal(Messages.UserNameExists, users.Create(staffName, "Staff@1", "测试员", null, RoleCodes.User, true).Message);
                 Assert.Equal(Messages.BadLogin, users.ChangePassword(staff.Data, "wrongxx", "NewPass1").Message);
                 Assert.True(users.ChangePassword(staff.Data, "Staff@1", "NewPass1").Success);
                 SysUser changed = new UserDal(ConnectionString).GetByUserName(staffName);
                 Assert.True(new UserBll(delegate { return changed; }).Authenticate(changed, "NewPass1").Success);
-                Assert.Equal(Messages.CannotDisableLastAdmin, users.Update(admin.UserId, admin.UserId, admin.RealName, admin.Phone, RoleCodes.Staff, true, null).Message);
+                Assert.Equal(Messages.CannotDisableLastAdmin, users.Update(admin.UserId, admin.UserId, admin.RealName, admin.Phone, RoleCodes.User, true, null).Message);
                 Assert.Equal(Messages.CannotDisableSelf, users.SetEnabled(admin.UserId, admin.UserId, false).Message);
                 Assert.True(users.SetEnabled(staff.Data, admin.UserId, false).Success);
                 SysUser disabled = new UserDal(ConnectionString).GetByUserName(staffName);

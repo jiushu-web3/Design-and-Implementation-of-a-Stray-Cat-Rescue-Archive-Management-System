@@ -5,7 +5,7 @@ using StrayCat.Model;
 
 namespace StrayCat.Web
 {
-    public partial class CatListPage : PageBase
+    public partial class CatListPage : AdminPageBase
     {
         protected TextBox KeywordBox;
         protected DropDownList StatusList;
