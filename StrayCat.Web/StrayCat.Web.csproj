@@ -173,6 +173,14 @@
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ReportAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportApprove.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ReportApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportList.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ReportList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RescueDetail.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>RescueDetail.aspx</DependentUpon>
@@ -234,6 +242,8 @@
     <Content Include="MyCenter.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="ReportAdd.aspx" />
+    <Content Include="ReportApprove.aspx" />
+    <Content Include="ReportList.aspx" />
     <Content Include="RescueDetail.aspx" />
     <Content Include="RescueEdit.aspx" />
     <Content Include="Site.Master" />

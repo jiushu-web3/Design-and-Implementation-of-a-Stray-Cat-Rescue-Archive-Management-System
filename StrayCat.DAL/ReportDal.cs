@@ -38,6 +38,19 @@ namespace StrayCat.DAL
                 SqlParams.P("@PageSize", pageSize));
         }
 
+        public StrayReport GetById(int reportId)
+        {
+            List<StrayReport> rows = _db.Query(
+                "usp_Report_GetById",
+                RecordMaps.Report,
+                SqlParams.P("@ReportId", reportId));
+            if (rows.Count == 0)
+            {
+                return null;
+            }
+            return rows[0];
+        }
+
         public PagedResult<StrayReport> Search(byte? status, string keyword, int pageIndex, int pageSize)
         {
             return _db.QueryPage(

@@ -56,6 +56,11 @@ namespace StrayCat.BLL
             return _reports.Search(status, FieldRules.Clean(keyword), pageIndex, pageSize);
         }
 
+        public StrayReport Get(int reportId)
+        {
+            return _reports.GetById(reportId);
+        }
+
         public OperationResult<int> Approve(int reportId, CatArchive cat, DateTime rescueTime, string initialHealth, int adminId)
         {
             cat.TempName = FieldRules.Clean(cat.TempName);

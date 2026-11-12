@@ -427,3 +427,20 @@ BEGIN
     WHERE c.CatId = @CatId AND c.Status = 2;
 END
 GO
+
+IF OBJECT_ID(N'dbo.usp_Report_GetById', N'P') IS NOT NULL DROP PROCEDURE dbo.usp_Report_GetById;
+GO
+CREATE PROCEDURE dbo.usp_Report_GetById
+    @ReportId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT r.ReportId, r.UserId, r.FoundPlace, r.FoundDate, r.Description, r.PhotoPath,
+           r.ContactPhone, r.Status, r.RejectReason, r.CatId, r.CreateTime,
+           r.AuditUserId, r.AuditTime, u.UserName, u.RealName
+    FROM dbo.StrayReport AS r
+    INNER JOIN dbo.SysUser AS u ON u.UserId = r.UserId
+    WHERE r.ReportId = @ReportId;
+END
+GO
