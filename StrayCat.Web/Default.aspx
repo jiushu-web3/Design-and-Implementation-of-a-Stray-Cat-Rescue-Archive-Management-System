@@ -20,6 +20,7 @@
                 <span class="col-name"><%#: Eval("TempName") %></span>
                 <span class="col-status"><span class="tag tag-<%#: Eval("Status") %>"><%#: Eval("StatusName") %></span></span>
                 <span class="col-time"><%#: Eval("RescueTimeText") %></span>
+                <a href='<%# "CatDetail.aspx?id=" + Eval("CatId") %>'>查看</a>
             </div>
         </ItemTemplate>
         <FooterTemplate></div></FooterTemplate>

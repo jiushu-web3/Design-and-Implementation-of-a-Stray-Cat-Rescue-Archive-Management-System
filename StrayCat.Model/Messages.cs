@@ -6,6 +6,9 @@ namespace StrayCat.Model
         public const string ChooseLogin = "请选择用户登录或管理员登录";
         public const string UseAdminLogin = "请使用管理员登录";
         public const string UseUserLogin = "请使用用户登录";
+        public const string BadCaptcha = "验证码错误";
+        public const string CaptchaRule = "验证码为 4 位数字或字母";
+        public const string Registered = "注册成功，请使用用户登录";
         public const string Disabled = "账号已停用";
         public const string UserNameExists = "用户名已存在";
         public const string Forbidden = "没有权限访问该页面";

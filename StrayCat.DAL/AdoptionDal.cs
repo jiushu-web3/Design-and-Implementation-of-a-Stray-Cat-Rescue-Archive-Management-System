@@ -32,6 +32,11 @@ namespace StrayCat.DAL
             return _db.Query("usp_Adoption_ListByCat", RecordMaps.Adoption, SqlParams.P("@CatId", catId));
         }
 
+        public List<AdoptionRecord> Recent()
+        {
+            return _db.Query("usp_Adoption_Recent", RecordMaps.AdoptionHistory);
+        }
+
         public OperationResult<int> Insert(AdoptionRecord record)
         {
             return _db.ExecuteReturnId(

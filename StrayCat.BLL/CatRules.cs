@@ -19,6 +19,27 @@ namespace StrayCat.BLL
             return status == CatStatuses.WaitingAdoption;
         }
 
+        public static string AdoptionEligibility(byte status)
+        {
+            if (status == CatStatuses.WaitingAdoption)
+            {
+                return "可以登记领养";
+            }
+            if (status == CatStatuses.InCare)
+            {
+                return "当前为在站照料，需先通过健康评估改为待领养";
+            }
+            if (status == CatStatuses.Adopted)
+            {
+                return "已有有效领养，不能重复登记";
+            }
+            if (CatStatuses.IsClosed(status))
+            {
+                return "档案已结束，不能登记领养";
+            }
+            return "当前状态不能登记领养";
+        }
+
         public static bool CanEditActiveAdoption(byte status)
         {
             return status == CatStatuses.Adopted;

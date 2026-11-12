@@ -37,6 +37,11 @@ namespace StrayCat.BLL
             return _follows.ListByAdoption(adoptionId);
         }
 
+        public List<FollowUpRecord> Recent()
+        {
+            return _follows.Recent();
+        }
+
         public OperationResult<int> Add(FollowUpRecord record, int userId)
         {
             Trim(record);

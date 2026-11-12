@@ -48,6 +48,8 @@ namespace StrayCat.Model
         public int RecordUserId { get; set; }
         public string Remark { get; set; }
         public DateTime CreateTime { get; set; }
+        public string CatNo { get; set; }
+        public string TempName { get; set; }
 
         public string MedicalDateText
         {
@@ -70,6 +72,8 @@ namespace StrayCat.Model
         public string Remark { get; set; }
         public DateTime CreateTime { get; set; }
         public int FollowUpCount { get; set; }
+        public string CatNo { get; set; }
+        public string TempName { get; set; }
 
         public string StatusName
         {
@@ -97,6 +101,8 @@ namespace StrayCat.Model
         public int RecordUserId { get; set; }
         public string Remark { get; set; }
         public DateTime CreateTime { get; set; }
+        public string CatNo { get; set; }
+        public string TempName { get; set; }
 
         public string FollowDateText
         {

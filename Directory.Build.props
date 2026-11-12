@@ -1,0 +1,20 @@
+<Project>
+  <!--
+    命令行构建（dotnet build / MSBuild.exe）时 MSBuildExtensionsPath 指向 MSBuild 自身目录，
+    找不到 Visual Studio 的 Web 编译目标，会报 MSB4019。
+    这里按「存在才采用」的顺序探测本机已安装的 Visual Studio；
+    在 Visual Studio 内部构建时 VSToolsPath 已由 IDE 给出，下面的条件不会生效，不影响 F5 调试。
+  -->
+  <PropertyGroup>
+    <_VsWebTargetsRel>WebApplications\Microsoft.WebApplication.targets</_VsWebTargetsRel>
+    <_VsCandidate1>$(ProgramFiles)\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VisualStudio\v18.0</_VsCandidate1>
+    <_VsCandidate2>$(ProgramFiles)\Microsoft Visual Studio\18\Professional\MSBuild\Microsoft\VisualStudio\v18.0</_VsCandidate2>
+    <_VsCandidate3>$(ProgramFiles)\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VisualStudio\v18.0</_VsCandidate3>
+    <_VsCandidate4>$(ProgramFiles)\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\v17.0</_VsCandidate4>
+
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' And Exists('$(_VsCandidate1)\$(_VsWebTargetsRel)')">$(_VsCandidate1)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' And Exists('$(_VsCandidate2)\$(_VsWebTargetsRel)')">$(_VsCandidate2)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' And Exists('$(_VsCandidate3)\$(_VsWebTargetsRel)')">$(_VsCandidate3)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' And Exists('$(_VsCandidate4)\$(_VsWebTargetsRel)')">$(_VsCandidate4)</VSToolsPath>
+  </PropertyGroup>
+</Project>

@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -83,6 +84,12 @@
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>CatList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Captcha.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Captcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaptchaImage.cs" />
+    <Compile Include="CaptchaSession.cs" />
     <Compile Include="CatStatus.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>CatStatus.aspx</DependentUpon>
@@ -142,6 +149,10 @@
     </Compile>
     <Compile Include="PageBase.cs" />
     <Compile Include="PageHelper.cs" />
+    <Compile Include="Register.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RescueDetail.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>RescueDetail.aspx</DependentUpon>
@@ -180,6 +191,7 @@
     <Content Include="CatDetail.aspx" />
     <Content Include="CatEdit.aspx" />
     <Content Include="CatList.aspx" />
+    <Content Include="Captcha.aspx" />
     <Content Include="CatStatus.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Content\css\site.css" />
@@ -196,6 +208,7 @@
     <Content Include="MedicalDetail.aspx" />
     <Content Include="MedicalEdit.aspx" />
     <Content Include="MedicalList.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="RescueDetail.aspx" />
     <Content Include="RescueEdit.aspx" />
     <Content Include="Site.Master" />

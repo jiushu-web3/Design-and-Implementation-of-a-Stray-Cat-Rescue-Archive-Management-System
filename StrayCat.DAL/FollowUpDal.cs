@@ -32,6 +32,11 @@ namespace StrayCat.DAL
             return _db.Query("usp_FollowUp_ListByAdoption", RecordMaps.FollowUp, SqlParams.P("@AdoptionId", adoptionId));
         }
 
+        public List<FollowUpRecord> Recent()
+        {
+            return _db.Query("usp_FollowUp_Recent", RecordMaps.FollowUpHistory);
+        }
+
         public int CountByAdoption(int adoptionId)
         {
             return _db.ExecuteScalarInt("usp_FollowUp_CountByAdoption", SqlParams.P("@AdoptionId", adoptionId));

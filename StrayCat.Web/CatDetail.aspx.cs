@@ -74,6 +74,7 @@ namespace StrayCat.Web
             Line(html, "毛色", cat.Color);
             Line(html, "绝育", Lookups.NeuteredName(cat.IsNeutered));
             Line(html, "状态", CatStatuses.Name(cat.Status));
+            Line(html, "领养资格", CatRules.AdoptionEligibility(cat.Status));
             if (cat.Status == CatStatuses.Terminated)
             {
                 Line(html, "终止原因", cat.TerminateReason);

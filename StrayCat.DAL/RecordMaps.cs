@@ -73,6 +73,14 @@ namespace StrayCat.DAL
             };
         }
 
+        public static MedicalRecord MedicalHistory(SqlDataReader reader)
+        {
+            MedicalRecord row = Medical(reader);
+            row.CatNo = DataMaps.Text(reader, "CatNo");
+            row.TempName = DataMaps.Text(reader, "TempName");
+            return row;
+        }
+
         public static AdoptionRecord Adoption(SqlDataReader reader)
         {
             return new AdoptionRecord
@@ -93,6 +101,14 @@ namespace StrayCat.DAL
             };
         }
 
+        public static AdoptionRecord AdoptionHistory(SqlDataReader reader)
+        {
+            AdoptionRecord row = Adoption(reader);
+            row.CatNo = DataMaps.Text(reader, "CatNo");
+            row.TempName = DataMaps.Text(reader, "TempName");
+            return row;
+        }
+
         public static FollowUpRecord FollowUp(SqlDataReader reader)
         {
             return new FollowUpRecord
@@ -106,6 +122,14 @@ namespace StrayCat.DAL
                 Remark = DataMaps.Text(reader, "Remark"),
                 CreateTime = reader.GetDateTime(reader.GetOrdinal("CreateTime"))
             };
+        }
+
+        public static FollowUpRecord FollowUpHistory(SqlDataReader reader)
+        {
+            FollowUpRecord row = FollowUp(reader);
+            row.CatNo = DataMaps.Text(reader, "CatNo");
+            row.TempName = DataMaps.Text(reader, "TempName");
+            return row;
         }
 
         public static MonthStat Month(SqlDataReader reader)

@@ -10,6 +10,7 @@ namespace StrayCat.Web
         {
             get
             {
+                //获取当前上下文
                 HttpContext context = HttpContext.Current;
                 if (context == null || context.Session == null || context.Session["UserId"] == null)
                 {
@@ -24,7 +25,6 @@ namespace StrayCat.Web
                 };
             }
         }
-
         public static void Set(CurrentUser user)
         {
             HttpContext.Current.Session["UserId"] = user.UserId;

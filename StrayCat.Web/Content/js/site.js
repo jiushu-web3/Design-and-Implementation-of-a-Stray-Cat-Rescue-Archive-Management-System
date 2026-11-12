@@ -61,9 +61,23 @@
                 limited[i].focus();
                 return false;
             }
+            if (rule === "captcha" && !/^[0-9A-Za-z]{4}$/.test(value)) {
+                show(root, "验证码为 4 位数字或字母");
+                limited[i].focus();
+                return false;
+            }
             if (value.length > max || (minAttr && value.length < min)) {
                 show(root, rule === "password" ? "密码须为 6 到 20 位" : "内容超出允许的长度");
                 limited[i].focus();
+                return false;
+            }
+        }
+        var compares = root.querySelectorAll("[data-compare]");
+        for (i = 0; i < compares.length; i++) {
+            var other = document.getElementById(compares[i].getAttribute("data-compare"));
+            if (other && compares[i].value !== other.value) {
+                show(root, "两次输入的密码不一致");
+                compares[i].focus();
                 return false;
             }
         }
@@ -145,6 +159,32 @@
         var inputs = document.querySelectorAll("input[type='file']");
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].addEventListener("change", function () { preview(this); });
+        }
+    });
+})();
+
+/* 验证码：点击图片或“换一张”时只更换图片，不提交表单 */
+(function () {
+    function reload(img) {
+        if (!img) {
+            return;
+        }
+        var scope = img.getAttribute("data-captcha-scope") || "login";
+        img.src = "Captcha.aspx?scope=" + encodeURIComponent(scope) + "&t=" + new Date().getTime();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var links = document.querySelectorAll("[data-captcha-refresh]");
+        var i;
+        for (i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function (event) {
+                event.preventDefault();
+                reload(document.getElementById(this.getAttribute("data-captcha-refresh")));
+            });
+        }
+        var images = document.querySelectorAll("img[data-captcha-scope]");
+        for (i = 0; i < images.length; i++) {
+            images[i].addEventListener("click", function () { reload(this); });
         }
     });
 })();

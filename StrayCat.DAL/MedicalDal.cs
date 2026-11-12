@@ -32,6 +32,11 @@ namespace StrayCat.DAL
             return _db.Query("usp_Medical_ListByCat", RecordMaps.Medical, SqlParams.P("@CatId", catId));
         }
 
+        public List<MedicalRecord> Recent()
+        {
+            return _db.Query("usp_Medical_Recent", RecordMaps.MedicalHistory);
+        }
+
         public OperationResult<int> Insert(MedicalRecord record)
         {
             return _db.ExecuteReturnId(

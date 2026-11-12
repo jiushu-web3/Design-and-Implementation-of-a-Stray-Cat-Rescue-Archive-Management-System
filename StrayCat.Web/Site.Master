@@ -16,10 +16,20 @@
                 </div>
                 <nav class="menu">
                     <a href="Default.aspx">首页</a>
-                    <a href="CatList.aspx">猫咪档案</a>
+                    <p class="menu-label">档案管理</p>
+                    <a href="CatList.aspx">档案查询</a>
+                    <a href="CatAdd.aspx">建立档案</a>
+                    <p class="menu-label">医疗管理</p>
+                    <a href="MedicalList.aspx">诊疗历史</a>
+                    <p class="menu-label">领养管理</p>
+                    <a href="AdoptionList.aspx">领养记录</a>
+                    <p class="menu-label">回访管理</p>
+                    <a href="FollowUpList.aspx">回访历史</a>
                     <asp:PlaceHolder ID="AdminMenu" runat="server" Visible="false">
-                        <a href="UserList.aspx">用户管理</a>
-                        <a href="Stat.aspx">数据统计</a>
+                        <p class="menu-label">统计报表</p>
+                        <a href="Stat.aspx">月度统计</a>
+                        <p class="menu-label">用户管理</p>
+                        <a href="UserList.aspx">用户列表</a>
                     </asp:PlaceHolder>
                     <a href="ChangePassword.aspx">修改密码</a>
                 </nav>

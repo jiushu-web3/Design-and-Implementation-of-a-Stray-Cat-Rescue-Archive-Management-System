@@ -30,6 +30,9 @@ namespace StrayCat.Tests
         {
             Assert.True(CatRules.CanAddAdoption(CatStatuses.WaitingAdoption));
             Assert.False(CatRules.CanAddAdoption(CatStatuses.InCare));
+            Assert.Equal("可以登记领养", CatRules.AdoptionEligibility(CatStatuses.WaitingAdoption));
+            Assert.Equal("当前为在站照料，需先通过健康评估改为待领养", CatRules.AdoptionEligibility(CatStatuses.InCare));
+            Assert.Equal("档案已结束，不能登记领养", CatRules.AdoptionEligibility(CatStatuses.Closed));
             Assert.True(CatRules.CanEditFollowUp(CatStatuses.Adopted, AdoptionStatuses.Active));
             Assert.False(CatRules.CanEditFollowUp(CatStatuses.Adopted, AdoptionStatuses.Returned));
             Assert.False(CatRules.CanEditArchive(CatStatuses.Closed));

@@ -168,6 +168,12 @@ strong { font-weight: 600; }
     box-shadow: inset 3px 0 0 var(--coral);
 }
 
+.menu-label {
+    margin: 14px 12px 4px;
+    font-size: 12px;
+    color: #C9B6A4;
+}
+
 .workspace { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 
 .top {
@@ -382,7 +388,66 @@ strong { font-weight: 600; }
 .list-row .col-time { width: 136px; min-width: 136px; font-family: var(--font-num); font-size: var(--fs-sm); color: var(--muted); }
 .list-row .tag { min-width: 0; }
 
-/* 3.4 猫咪卡片（CatCard.ascx 使用；当前页面标记尚未启用） ---------------- */
+/* 3.4 统计图表（Stat.aspx：表头行 + 月度柱状图） --------------------------- */
+.list-row.head {
+    background: var(--surface-2);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-color: var(--line-strong);
+}
+
+.list-row.head:hover { background: var(--surface-2); }
+
+.list-row.head span {
+    min-width: 90px;    /* 与数据行 .list-row span 同宽，保证表头与数值对齐 */
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.list-row.head span:first-child { font-family: var(--font); color: var(--muted); }
+
+.chart-box {
+    margin: var(--sp-4) 0 var(--sp-5);
+    padding: var(--sp-4);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-2);
+}
+
+.chart-head h3 { margin: 0; font-size: var(--fs-lg); font-weight: 600; color: var(--ink); }
+
+.chart-legend { display: flex; gap: var(--sp-4); }
+
+.chart-legend span {
+    display: inline-flex;
+    align-items: center;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+.chart-legend i { width: 10px; height: 10px; margin-right: 6px; border-radius: 3px; }
+.chart-legend i.rescue { background: var(--coral); }
+.chart-legend i.adopt { background: var(--matcha); }
+
+.chart-svg { display: block; width: 100%; height: auto; }
+
+/* 领养类指标用抹茶绿，与「已领养」状态语义一致 */
+.card.accent::after { background: var(--matcha); }
+.card.accent strong { color: #4E6B45; }
+
+/* 3.5 猫咪卡片（CatCard.ascx 使用；当前页面标记尚未启用） ---------------- */
 .cat-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -449,7 +514,7 @@ strong { font-weight: 600; }
     color: var(--faint);
 }
 
-/* 3.5 状态标签（CatStatuses.CssClass 映射，5 状态 + 绝育） ---------------- */
+/* 3.6 状态标签（CatStatuses.CssClass 映射，5 状态 + 绝育） ---------------- */
 .tag {
     display: inline-flex;
     align-items: center;
@@ -478,7 +543,7 @@ strong { font-weight: 600; }
 .tag-4 { background: var(--s-closed-bg); color: var(--s-closed-fg); border-color: var(--s-closed-bd); }
 .tag-5 { background: var(--s-end-bg);    color: var(--s-end-fg);    border-color: var(--s-end-bd); }
 
-/* 3.6 筛选区 -------------------------------------------------------------- */
+/* 3.7 筛选区 -------------------------------------------------------------- */
 .filters {
     display: flex;
     flex-wrap: wrap;
@@ -515,7 +580,7 @@ strong { font-weight: 600; }
 .field { display: flex; flex-direction: column; gap: 5px; }
 .field > span { font-size: var(--fs-sm); color: var(--muted); }
 
-/* 3.7 表单 ---------------------------------------------------------------- */
+/* 3.8 表单 ---------------------------------------------------------------- */
 .form-grid { max-width: 720px; }
 .form-grid > div { margin-top: var(--sp-4); }
 
@@ -581,7 +646,7 @@ input[type="file"] {
     color: var(--muted);
 }
 
-/* 3.8 分页 ---------------------------------------------------------------- */
+/* 3.9 分页 ---------------------------------------------------------------- */
 .pager {
     display: flex;
     flex-wrap: wrap;
@@ -616,7 +681,7 @@ input[type="file"] {
     color: #FFFDFA;
 }
 
-/* 3.9 详情页 -------------------------------------------------------------- */
+/* 3.10 详情页 -------------------------------------------------------------- */
 .split { display: flex; gap: var(--sp-5); align-items: flex-start; }
 .split .main-col { flex: 1; min-width: 0; }
 
@@ -696,7 +761,7 @@ input[type="file"] {
     flex: 0 0 96px;
 }
 
-/* 3.10 登录页 ------------------------------------------------------------- */
+/* 3.11 登录页 ------------------------------------------------------------- */
 .gate {
     display: flex;
     min-height: 100vh;
@@ -774,7 +839,45 @@ input[type="file"] {
 
 .gate-card .gate-choice label { display: inline; margin: 0; }
 
-/* 3.11 空状态 / 提示条 ---------------------------------------------------- */
+.captcha-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gate-card .captcha-row input {
+    flex: 1;
+    width: 1%;
+    min-width: 0;
+}
+
+.captcha-image {
+    width: 120px;
+    height: 42px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    cursor: pointer;
+}
+
+.captcha-row a { white-space: nowrap; font-size: var(--fs-sm); }
+
+.gate-card .hint { margin: 6px 0 0; }
+
+.gate-links {
+    margin: var(--sp-4) 0 0;
+    text-align: center;
+    font-size: var(--fs-sm);
+}
+
+.form-message.is-success { color: #2f6b4f; }
+
+.form-message.is-success:not(:empty) {
+    background: #eef6f0;
+    border-color: #c9e0d2;
+}
+
+/* 3.12 空状态 / 提示条 ---------------------------------------------------- */
 .empty {
     display: block;
     padding: var(--sp-6) var(--sp-4);
@@ -864,6 +967,7 @@ input[type="file"] {
     .brand h1 { font-size: var(--fs-sm); }
     .menu { flex-direction: row; gap: 2px; overflow-x: auto; min-width: 0; flex: 1 1 auto; }
     .menu a { white-space: nowrap; }
+    .menu-label { white-space: nowrap; margin: 0 8px; align-self: center; }
     .menu a.active { box-shadow: inset 0 -3px 0 var(--coral); }
     .list-row { flex-wrap: wrap; gap: var(--sp-2) var(--sp-3); }
     .list-row span { min-width: 0; }

@@ -81,6 +81,15 @@ namespace StrayCat.BLL
             return Authenticate(user, password);
         }
 
+        public OperationResult<int> Register(string userName, string password, string confirmPassword, string realName, string phone)
+        {
+            if (!string.Equals(password ?? "", confirmPassword ?? "", StringComparison.Ordinal))
+            {
+                return OperationResult<int>.Fail(Messages.PasswordMismatch);
+            }
+            return Create(userName, password, realName, phone, RoleCodes.Staff, true);
+        }
+
         public int CountEnabled()
         {
             return _countEnabled();

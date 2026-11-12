@@ -33,7 +33,7 @@ namespace StrayCat.Web
                 DateBox.Text = DateTime.Today.ToString("yyyy-MM-dd");
                 if (!CatRules.CanAddAdoption(detail.Cat.Status))
                 {
-                    MessageLabel.Text = Messages.StatusNotAllowed;
+                    MessageLabel.Text = CatRules.AdoptionEligibility(detail.Cat.Status);
                     SaveButton.Visible = false;
                 }
             }
