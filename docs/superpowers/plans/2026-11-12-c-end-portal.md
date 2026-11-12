@@ -711,7 +711,7 @@ git commit -m "Add portal models, statuses and messages"
   - `ApplicationDal.Search(byte?, int, int) -> PagedResult<AdoptionApplication>`
   - `ApplicationDal.Approve(int applicationId, int auditUserId) -> OperationResult<int>`
   - `ApplicationDal.Reject(int applicationId, int auditUserId, string reason) -> OperationResult<int>`
-  - `CatDal.ListAdoptable(int, int) -> PagedResult<CatListItem>`、`CatDal.GetPublicDetail(int) -> CatDetail`
+  - `CatDal.ListAdoptable(int, int) -> PagedResult<PublicCat>`、`CatDal.GetPublicDetail(int) -> CatDetail`
 
 - [ ] **Step 1: 增加行映射**
 
