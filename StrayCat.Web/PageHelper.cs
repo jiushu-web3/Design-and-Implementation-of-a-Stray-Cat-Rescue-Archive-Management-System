@@ -215,6 +215,11 @@ namespace StrayCat.Web
 
         public static string Pager(string hrefWithoutPage, int pageIndex, int total, int pageSize)
         {
+            return Pager(hrefWithoutPage, pageIndex, total, pageSize, "page");
+        }
+
+        public static string Pager(string hrefWithoutPage, int pageIndex, int total, int pageSize, string pageParameter)
+        {
             if (total <= pageSize)
             {
                 return "";
@@ -230,7 +235,7 @@ namespace StrayCat.Web
             }
             StringBuilder html = new StringBuilder();
             html.Append("<div class=\"pager\">");
-            AppendLink(html, hrefWithoutPage, pageIndex - 1, "上一页", pageIndex > 1);
+            AppendLink(html, hrefWithoutPage, pageParameter, pageIndex - 1, "上一页", pageIndex > 1);
             int start = Math.Max(1, pageIndex - 3);
             int end = Math.Min(pages, pageIndex + 3);
             for (int i = start; i <= end; i++)
@@ -241,22 +246,22 @@ namespace StrayCat.Web
                 }
                 else
                 {
-                    AppendLink(html, hrefWithoutPage, i, i.ToString(), true);
+                    AppendLink(html, hrefWithoutPage, pageParameter, i, i.ToString(), true);
                 }
             }
-            AppendLink(html, hrefWithoutPage, pageIndex + 1, "下一页", pageIndex < pages);
+            AppendLink(html, hrefWithoutPage, pageParameter, pageIndex + 1, "下一页", pageIndex < pages);
             html.Append("</div>");
             return html.ToString();
         }
 
-        private static void AppendLink(StringBuilder html, string hrefWithoutPage, int page, string text, bool enabled)
+        private static void AppendLink(StringBuilder html, string hrefWithoutPage, string pageParameter, int page, string text, bool enabled)
         {
             if (!enabled)
             {
                 return;
             }
             string join = hrefWithoutPage.IndexOf('?') >= 0 ? "&" : "?";
-            html.Append("<a href=\"").Append(hrefWithoutPage).Append(join).Append("page=").Append(page).Append("\">");
+            html.Append("<a href=\"").Append(hrefWithoutPage).Append(join).Append(pageParameter).Append("=").Append(page).Append("\">");
             html.Append(Html(text)).Append("</a>");
         }
 

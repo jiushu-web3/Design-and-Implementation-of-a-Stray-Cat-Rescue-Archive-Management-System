@@ -155,11 +155,19 @@
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>MedicalList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MyCenter.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MyCenter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PageBase.cs" />
     <Compile Include="PageHelper.cs" />
     <Compile Include="Register.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportAdd.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ReportAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="RescueDetail.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -218,7 +226,9 @@
     <Content Include="MedicalDetail.aspx" />
     <Content Include="MedicalEdit.aspx" />
     <Content Include="MedicalList.aspx" />
+    <Content Include="MyCenter.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="ReportAdd.aspx" />
     <Content Include="RescueDetail.aspx" />
     <Content Include="RescueEdit.aspx" />
     <Content Include="Site.Master" />
