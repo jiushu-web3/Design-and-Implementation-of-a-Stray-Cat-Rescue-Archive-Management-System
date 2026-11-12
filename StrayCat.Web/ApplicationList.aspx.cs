@@ -50,6 +50,7 @@ namespace StrayCat.Web
                 if (!result.Success)
                 {
                     MessageLabel.Text = result.Message;
+                    Bind();
                     return;
                 }
                 MessageLabel.CssClass = "form-message is-success";
@@ -81,6 +82,8 @@ namespace StrayCat.Web
             if (!result.Success)
             {
                 MessageLabel.Text = result.Message;
+                RejectPanel.Visible = true;
+                Bind();
                 return;
             }
             MessageLabel.CssClass = "form-message is-success";
@@ -100,7 +103,7 @@ namespace StrayCat.Web
 
         private void Bind()
         {
-            string statusText = Request.QueryString["status"] ?? "";
+            string statusText = StatusList.SelectedValue;
             int pageIndex = PageHelper.Positive(Request.QueryString["page"]);
             if (pageIndex == 0)
             {
