@@ -10,7 +10,7 @@
     <form id="RegisterForm" runat="server" data-validate="true">
         <div class="gate-card">
             <p class="brand-mark">档案</p>
-            <h1>注册工作人员账号</h1>
+            <h1>注册普通用户账号</h1>
             <p class="gate-note">注册后使用“用户登录”。管理员账号由站内管理员创建。</p>
             <asp:Label ID="MessageLabel" runat="server" CssClass="form-message" data-form-message="true" />
             <label for="UserNameBox">用户名</label>
