@@ -42,5 +42,12 @@ namespace StrayCat.Model
         public const string BadDate = "请填写正确的日期";
         public const string DateOrder = "开始日期不能晚于结束日期";
         public const string PasswordMismatch = "两次输入的密码不一致";
+        public const string ReportSubmitted = "上报已提交，等待管理员处理";
+        public const string ApplicationSubmitted = "申请已提交，等待管理员审核";
+        public const string ApplicationExists = "你已提交过该猫的申请，请等待审核";
+        public const string CatNotAdoptable = "该猫当前不可申请领养";
+        public const string RejectReasonRequired = "请填写驳回理由";
+        public const string AuditChanged = "该记录已被处理，请刷新后重试";
+        public const string BadBreed = "请填写品种";
     }
 }
