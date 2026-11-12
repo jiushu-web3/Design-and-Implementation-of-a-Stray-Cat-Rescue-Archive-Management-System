@@ -28,8 +28,8 @@ namespace StrayCat.Web
             {
                 PageHelper.BindGenders(GenderList, false);
                 PageHelper.BindNeutered(NeuteredList);
-                LoadReport();
             }
+            LoadReport();
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
@@ -105,7 +105,10 @@ namespace StrayCat.Web
             Line(html, "上报时间", report.CreateTime.ToString("yyyy-MM-dd HH:mm"));
             Line(html, "状态", ReportStatuses.Name(report.Status));
             InfoLiteral.Text = html.ToString();
-            DateBox.Text = report.FoundDate.ToString("yyyy-MM-dd");
+            if (!IsPostBack)
+            {
+                DateBox.Text = report.FoundDate.ToString("yyyy-MM-dd");
+            }
         }
 
         private static string ReporterText(StrayReport report)

@@ -21,6 +21,8 @@
                     <a href="ReportAdd.aspx">上报流浪猫</a>
                     <a href="MyCenter.aspx">我的中心</a>
                     <asp:PlaceHolder ID="AdminMenu" runat="server" Visible="false">
+                        <p class="menu-label">审核</p>
+                        <a href="ReportList.aspx">上报审核</a>
                         <p class="menu-label">档案管理</p>
                         <a href="CatList.aspx">档案查询</a>
                         <a href="CatAdd.aspx">建立档案</a>
