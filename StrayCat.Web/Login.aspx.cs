@@ -73,7 +73,13 @@ namespace StrayCat.Web
             }
             LoginSession.Set(result.Data);
             string target = Request.QueryString["returnUrl"];
-            if (string.IsNullOrEmpty(target) || !target.StartsWith("/") || target.StartsWith("//"))
+            bool isLocal = !string.IsNullOrEmpty(target)
+                && target.Length > 1
+                && target[0] == '/'
+                && target[1] != '/'
+                && target[1] != '\\'
+                && target.IndexOfAny(new[] { '\\', '\r', '\n', '\t' }) < 0;
+            if (!isLocal)
             {
                 target = "~/Default.aspx";
             }
