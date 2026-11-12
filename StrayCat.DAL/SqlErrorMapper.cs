@@ -26,6 +26,10 @@ namespace StrayCat.DAL
             {
                 return Messages.UserNameExists;
             }
+            if (text.IndexOf("UX_AdoptionApplication_Pending", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                return Messages.ApplicationExists;
+            }
             if (text.IndexOf("UQ_CatArchive_CatNo", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 return Messages.CatNoConflict;

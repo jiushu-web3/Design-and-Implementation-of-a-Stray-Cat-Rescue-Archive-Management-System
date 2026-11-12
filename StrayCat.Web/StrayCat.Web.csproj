@@ -76,6 +76,10 @@
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>AdoptionList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ApplyAdoption.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ApplyAdoption.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CatAdd.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>CatAdd.aspx</DependentUpon>
@@ -205,6 +209,7 @@
     <Content Include="AdoptionDetail.aspx" />
     <Content Include="AdoptionEdit.aspx" />
     <Content Include="AdoptionList.aspx" />
+    <Content Include="ApplyAdoption.aspx" />
     <Content Include="CatAdd.aspx" />
     <Content Include="CatDetail.aspx" />
     <Content Include="CatEdit.aspx" />
