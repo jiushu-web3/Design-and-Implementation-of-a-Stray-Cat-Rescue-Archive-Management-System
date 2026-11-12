@@ -53,7 +53,11 @@ namespace StrayCat.BLL
 
         public PagedResult<AdoptionApplication> ListByUser(int userId, int pageIndex, int pageSize)
         {
-            return _applications.ListByUser(userId, pageIndex, pageSize);
+            pageIndex = pageIndex < 1 ? 1 : pageIndex;
+            PagedResult<AdoptionApplication> page = _applications.ListByUser(userId, pageIndex, pageSize);
+            page.PageIndex = pageIndex;
+            page.PageSize = pageSize;
+            return page;
         }
 
         public PagedResult<AdoptionApplication> Search(byte? status, int pageIndex, int pageSize)

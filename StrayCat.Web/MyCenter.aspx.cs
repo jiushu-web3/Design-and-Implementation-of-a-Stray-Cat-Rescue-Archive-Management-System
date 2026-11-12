@@ -96,6 +96,20 @@ namespace StrayCat.Web
             return "tag-wait";
         }
 
+        protected string ApplicationStatusTag(object value)
+        {
+            byte status = Convert.ToByte(value);
+            if (status == ApplicationStatuses.Approved)
+            {
+                return "tag-adopted";
+            }
+            if (status == ApplicationStatuses.Rejected)
+            {
+                return "tag-ended";
+            }
+            return "tag-wait";
+        }
+
         protected string DateText(object value)
         {
             return Convert.ToDateTime(value).ToString("yyyy-MM-dd");

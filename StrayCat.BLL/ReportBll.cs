@@ -44,7 +44,11 @@ namespace StrayCat.BLL
 
         public PagedResult<StrayReport> ListByUser(int userId, int pageIndex, int pageSize)
         {
-            return _reports.ListByUser(userId, pageIndex, pageSize);
+            pageIndex = pageIndex < 1 ? 1 : pageIndex;
+            PagedResult<StrayReport> page = _reports.ListByUser(userId, pageIndex, pageSize);
+            page.PageIndex = pageIndex;
+            page.PageSize = pageSize;
+            return page;
         }
 
         public PagedResult<StrayReport> Search(byte? status, string keyword, int pageIndex, int pageSize)
