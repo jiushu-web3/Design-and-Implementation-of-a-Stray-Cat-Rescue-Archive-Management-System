@@ -72,7 +72,12 @@ namespace StrayCat.Web
                 return;
             }
             LoginSession.Set(result.Data);
-            Response.Redirect("~/Default.aspx", false);
+            string target = Request.QueryString["returnUrl"];
+            if (string.IsNullOrEmpty(target) || !target.StartsWith("/") || target.StartsWith("//"))
+            {
+                target = "~/Default.aspx";
+            }
+            Response.Redirect(target, false);
             Context.ApplicationInstance.CompleteRequest();
         }
     }

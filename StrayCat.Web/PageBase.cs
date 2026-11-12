@@ -17,7 +17,7 @@ namespace StrayCat.Web
         {
             if (LoginSession.Current == null)
             {
-                Leave("~/Login.aspx?msg=expired");
+                Leave("~/Login.aspx?msg=expired", Request.RawUrl);
                 return;
             }
             base.OnInit(e);
@@ -41,9 +41,13 @@ namespace StrayCat.Web
             base.OnPreRender(e);
         }
 
-        protected void Leave(string url)
+        protected void Leave(string url, string returnUrl = null)
         {
             Redirecting = true;
+            if (!string.IsNullOrEmpty(returnUrl))
+            {
+                url += (url.Contains("?") ? "&" : "?") + "returnUrl=" + System.Web.HttpUtility.UrlEncode(returnUrl);
+            }
             Response.Redirect(url, false);
             Context.ApplicationInstance.CompleteRequest();
         }
