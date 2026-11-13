@@ -15,11 +15,11 @@ namespace StrayCat.Web
     public partial class StatPage : AdminPageBase
     {
         // 图表配色与 site.css 中的设计令牌保持一致
-        private const string RescueColor = "#E8836A";   // --coral
-        private const string AdoptColor = "#7E9E76";    // --matcha
-        private const string GridColor = "#F1E8DC";
-        private const string AxisColor = "#D9CDBF";
-        private const string LabelColor = "#8C7F73";    // --muted
+        private const string RescueColor = "#FF8FA3";   // --coral
+        private const string AdoptColor = "#7FCDB4";    // --matcha
+        private const string GridColor = "#F7E4DD";     // --line
+        private const string AxisColor = "#EFD2C8";     // --line-strong
+        private const string LabelColor = "#9A857C";    // --muted
 
         protected DropDownList YearList;
         protected Repeater MonthRepeater;

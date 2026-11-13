@@ -4,14 +4,14 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>流浪猫救助档案管理系统</title>
-    <link rel="stylesheet" href="Content/css/site.css" />
+    <link rel="stylesheet" href="Content/css/site.css?v=20261113" />
 </head>
 <body>
     <form id="MainForm" runat="server" enctype="multipart/form-data">
         <div class="shell">
             <aside class="side">
                 <div class="brand">
-                    <p class="brand-mark">档案</p>
+                    <p class="brand-mark">🐾 喵档案</p>
                     <h1>流浪猫救助档案管理系统</h1>
                 </div>
                 <nav class="menu">

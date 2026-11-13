@@ -4,17 +4,22 @@ GO
 USE StrayCatArchive;
 GO
 
+-- 删除顺序：子表在前，父表在后（有外键引用时不能先删父表）
 IF OBJECT_ID(N'dbo.FollowUpRecord', N'U') IS NOT NULL DROP TABLE dbo.FollowUpRecord;
+IF OBJECT_ID(N'dbo.AdoptionApplication', N'U') IS NOT NULL DROP TABLE dbo.AdoptionApplication;
+IF OBJECT_ID(N'dbo.StrayReport', N'U') IS NOT NULL DROP TABLE dbo.StrayReport;
 IF OBJECT_ID(N'dbo.AdoptionRecord', N'U') IS NOT NULL DROP TABLE dbo.AdoptionRecord;
 IF OBJECT_ID(N'dbo.MedicalRecord', N'U') IS NOT NULL DROP TABLE dbo.MedicalRecord;
 IF OBJECT_ID(N'dbo.RescueRecord', N'U') IS NOT NULL DROP TABLE dbo.RescueRecord;
 IF OBJECT_ID(N'dbo.CatArchive', N'U') IS NOT NULL DROP TABLE dbo.CatArchive;
 IF OBJECT_ID(N'dbo.SysUser', N'U') IS NOT NULL DROP TABLE dbo.SysUser;
 GO
-
+-- 系统用户表
 CREATE TABLE dbo.SysUser
 (
+    -- 用户ID,`IDENTITY(1,1)` = 自增列   `PK_SysUser` 是给主键约束起的名字
     UserId INT IDENTITY(1, 1) NOT NULL CONSTRAINT PK_SysUser PRIMARY KEY,
+    -- 用户名,（中文安全）
     UserName NVARCHAR(20) NOT NULL,
     PasswordHash CHAR(64) NOT NULL,
     Salt CHAR(32) NOT NULL,

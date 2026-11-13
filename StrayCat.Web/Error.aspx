@@ -4,7 +4,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>系统提示</title>
-    <link rel="stylesheet" href="Content/css/site.css" />
+    <link rel="stylesheet" href="Content/css/site.css?v=20261113" />
 </head>
 <body class="gate">
     <form id="ErrorForm" runat="server">

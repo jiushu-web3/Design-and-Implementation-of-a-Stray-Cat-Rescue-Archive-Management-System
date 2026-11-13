@@ -4,7 +4,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>登录 - 流浪猫救助档案管理系统</title>
-    <link rel="stylesheet" href="Content/css/site.css" />
+    <link rel="stylesheet" href="Content/css/site.css?v=20261113" />
 </head>
 <body class="gate">
     <form id="LoginForm" runat="server" data-validate="true">
